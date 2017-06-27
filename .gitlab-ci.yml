@@ -1,0 +1,96 @@
+
+stages:
+- test
+- build
+- deploy
+
+before_script:
+  - CONTAINER_SH="docker-compose -f ci/docker-compose.yml run -e CI_PROJECT_NAME -e CI_BUILD_REF_NAME --rm"
+  - $CONTAINER_SH npm install
+
+#Run tests and build on all branches
+test_branches:
+  stage: test
+  only:
+    - branches
+  except:
+    - master
+  script:
+    - $CONTAINER_SH npm run build
+    - $CONTAINER_SH npm run test:silent
+
+#Run tests and a full build on the master branch
+build_master:
+  stage: build
+  only:
+    - master
+  script:
+    - $CONTAINER_SH npm run build
+    - $CONTAINER_SH npm run test:silent
+
+#Deploy the review-app's coverage report
+start_coverage_deploy:
+  stage: deploy
+  only:
+  - master
+  variables:
+    GIT_STRATEGY: none
+  script:
+  - DIR="/srv/nginx/pages/coverage/$CI_PROJECT_NAME/$CI_BUILD_REF_NAME/"
+  - if [ ! -d $DIR ]; then mkdir -p $DIR; fi
+  - rsync -av --delete coverage/lcov-report/* $DIR
+  #- $CONTAINER_SH chown -R 998:998 build/
+  environment:
+    name: coverage/$CI_PROJECT_NAME/$CI_BUILD_REF_NAME
+    url: http://jenkins.t2.local:7777/coverage/$CI_PROJECT_NAME/$CI_BUILD_REF_NAME/
+    on_stop: stop_coverage_deploy
+#Stop deployment of the review-app's coverage report
+stop_coverage_deploy:
+  stage: deploy
+  only:
+  - master
+  variables:
+    GIT_STRATEGY: none
+  script:
+  - rm -rf /srv/nginx/pages/coverage/$CI_PROJECT_NAME/$CI_BUILD_REF_NAME
+  when: manual
+  environment:
+    name: coverage/$CI_PROJECT_NAME/$CI_BUILD_REF_NAME
+    action: stop
+
+#Deploy the review-app
+start_app_deploy:
+  stage: deploy
+  only:
+  - master
+  variables:
+    GIT_STRATEGY: none
+  script:
+  - DIR="/srv/nginx/pages/$CI_PROJECT_NAME/$CI_BUILD_REF_NAME/"
+  - if [ ! -d $DIR ]; then mkdir -p $DIR; fi
+  - rsync -av --delete build/* $DIR
+  #- $CONTAINER_SH chown -R 998:998 build/
+  environment:
+    name: review/$CI_PROJECT_NAME/$CI_BUILD_REF_NAME/
+    url: http://jenkins.t2.local:7777/$CI_PROJECT_NAME/$CI_BUILD_REF_NAME/
+    on_stop: stop_app_deploy
+#Stop deployment of the review-app
+stop_app_deploy:
+  stage: deploy
+  only:
+  - master
+  variables:
+    GIT_STRATEGY: none
+  script:
+  - rm -rf /srv/nginx/pages/$CI_PROJECT_NAME/$CI_BUILD_REF_NAME
+  when: manual
+  environment:
+    name: review/$CI_PROJECT_NAME/$CI_BUILD_REF_NAME/
+    action: stop
+
+#Set the ownership of the compiled directories so the next build script can remove them
+after_script:
+  - if [ -d build/ ]; then docker-compose -f ci/docker-compose.yml run --rm chown -R 998:998 build/; fi
+  - if [ -d jest/ ]; then docker-compose -f ci/docker-compose.yml run --rm chown -R 998:998 jest/; fi
+  - if [ -d coverage/ ]; then docker-compose -f ci/docker-compose.yml run --rm chown -R 998:998 coverage/; fi
+

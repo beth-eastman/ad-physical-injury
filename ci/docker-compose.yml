@@ -1,0 +1,31 @@
+#Compose file for running react app
+
+react: &defaults
+  image:  jenkins.t2.local:5000/node:7.9.0
+  volumes:
+    - ../:/var/www
+    - /srv/gitlab-runner/builds/resources/pwa/node_modules:/var/www/node_modules
+
+bash:
+  <<: *defaults
+  entrypoint: ['bash']
+
+chown:
+  <<: *defaults
+  entrypoint: ['chown']
+
+npm:
+  <<: *defaults
+  entrypoint: ['npm']
+
+ls:
+  <<: *defaults
+  entrypoint: ['ls']
+
+node:
+  <<: *defaults
+  entrypoint: ['node']
+
+echo:
+  <<: *defaults
+  entrypoint: ['echo']
