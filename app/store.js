@@ -2,6 +2,7 @@
  * Create the store with asynchronously loaded reducers
  */
 
+import { autoRehydrate } from 'redux-persist-immutable';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { fromJS } from 'immutable';
 import { routerMiddleware } from 'react-router-redux';
@@ -21,6 +22,7 @@ export default function configureStore(initialState = {}, history) {
 
   const enhancers = [
     applyMiddleware(...middlewares),
+    autoRehydrate(),
   ];
 
   // If Redux DevTools Extension is installed use it, otherwise use Redux compose

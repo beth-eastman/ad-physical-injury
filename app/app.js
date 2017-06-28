@@ -14,6 +14,8 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { applyRouterMiddleware, Router, hashHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
+import { persistStore } from 'redux-persist-immutable';
+import localForage from 'localforage';
 import { useScroll } from 'react-router-scroll';
 // Material UI
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -56,6 +58,8 @@ injectTapEventPlugin();
 // e.g. `const browserHistory = useRouterHistory(createBrowserHistory)();`
 const initialState = {};
 const store = configureStore(initialState, hashHistory);
+
+persistStore(store, { storage: localForage });
 
 // Sync history and store, as the react-router-redux reducer
 // is under the non-default key ("routing"), selectLocationState
