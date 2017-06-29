@@ -14,6 +14,9 @@ module.exports = (options) => ({
   }, options.output), // Merge with env dependent settings
   module: {
     loaders: [{
+      test: /\.(t|j)sx?$/,
+      use: { loader: 'awesome-typescript-loader' },
+    }, {
       test: /\.js$/, // Transform all .js files required somewhere with Babel
       loader: 'babel-loader',
       exclude: /node_modules/,
@@ -83,6 +86,8 @@ module.exports = (options) => ({
       '.js',
       '.jsx',
       '.react.js',
+      '.ts',
+      '.tsx',
     ],
     mainFields: [
       'browser',

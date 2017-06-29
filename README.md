@@ -22,3 +22,11 @@ This template is based on React Boilerplate. See what's included: https://github
 2. Hash routing
 3. Cordova builds
 4. Persistant state
+5. TypeScript support
+
+## Working with TypeScript along side existing ES6 code
+
+TS compiler looks for files with .ts, .tsx extensions. The only thing to keep
+in mind is the need to add typings if they aren't already present: `npm install
+--save @types/some-module`. You can check /package.json to confirm: look for
+`@types/some-module` as a dependency.
