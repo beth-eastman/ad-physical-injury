@@ -4,7 +4,7 @@ react: &defaults
   image:  jenkins.t2.local:5000/node:7.9.0
   volumes:
     - ../:/var/www
-    - /srv/gitlab-runner/builds/resources/pwa/node_modules:/var/www/node_modules
+    - /data/srv/gitlab-runner/builds/resources/pwa/node_modules:/var/www/node_modules
 
 bash:
   <<: *defaults
