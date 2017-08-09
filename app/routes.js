@@ -22,7 +22,7 @@ export default function createRoutes(store) {
       name: 'home',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
-          import('containers/HomePage'),
+          import('components/HomePage'),
         ]);
 
         const renderRoute = loadModule(cb);
@@ -32,6 +32,95 @@ export default function createRoutes(store) {
         });
 
         importModules.catch(errorLoading);
+      },
+    }, {
+      path: '/videos',
+      name: 'videos',
+      getComponent(nextState, cb) {
+        import('components/VideosPage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    }, {
+      path: '/assessments',
+      name: 'assessments',
+      getComponent(nextState, cb) {
+        import('components/AssessmentPage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    }, {
+      path: '/assessments/:assessmentId',
+      name: 'assessmentsquiz',
+      getComponent(nextState, cb) {
+        import('components/Page')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    }, {
+      path: '/library',
+      name: 'library',
+      getComponent(nextState, cb) {
+        import('components/LibraryPage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    }, {
+      path: '/library/:libraryPageId',
+      name: 'libraryInfo',
+      getComponent(nextState, cb) {
+        import('components/LibraryBook')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    }, {
+      path: '/resources',
+      name: 'resources',
+      getComponent(nextState, cb) {
+        import('components/ResourcePage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    }, {
+      path: '/resources/links',
+      name: 'links',
+      getComponent(nextState, cb) {
+        import('components/Links')
+        .then(loadModule(cb))
+        .catch(errorLoading);
+      },
+    }, {
+      path: '/resources/books',
+      name: 'books',
+      getComponent(nextState, cb) {
+        import('components/Books')
+        .then(loadModule(cb))
+        .catch(errorLoading);
+      },
+    },
+    {
+      path: '/resources/articles/:articleId',
+      name: 'facts',
+      getComponent(nextState, cb) {
+        import('components/Article')
+        .then(loadModule(cb))
+        .catch(errorLoading);
+      },
+    }, {
+      path: '/apphub',
+      name: 'app-hub',
+      getComponent(nextState, cb) {
+        import('containers/NotFoundPage')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    }, {
+      path: '/videos/:videoId',
+      name: 'video',
+      getComponent(nextState, cb) {
+        import('components/Video')
+          .then(loadModule(cb))
+          .catch(errorLoading);
       },
     }, {
       path: '*',
