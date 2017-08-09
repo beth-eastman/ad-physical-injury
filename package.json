@@ -4,7 +4,7 @@
   "description": "Physical Injury",
   "repository": {
     "type": "git",
-    "url": "ssh://git@gitlab.t2.local:10022/t2-pwa/navy-pt"
+    "url": "ssh://git@github.com:beth-eastman/ad-physical-injury.git"
   },
   "engines": {
     "npm": ">=3",
@@ -36,7 +36,7 @@
     "clean:all": "npm run analyze:clean && npm run test:clean && npm run build:clean",
     "generate": "plop --plopfile internals/generators/index.js",
     "lint": "npm run lint:js",
-    "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts",
+    "lint:eslint": "eslint --ignore-path .eslintignore .gitignore service-worker.js --ignore-pattern internals/scripts",
     "lint:js": "npm run lint:eslint -- . ",
     "lint:staged": "lint-staged",
     "pretest": "npm run test:clean && npm run lint",
