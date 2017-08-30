@@ -39,6 +39,7 @@ interface HOCPageProps extends PageProps{
 
 const withPropsComponent = (WrappedComponent,props) => {
   const componentProps = {...props, tab: undefined, tabIndex: undefined};
+  console.log(componentProps);
   return <WrappedComponent {...componentProps} />;
 }
 

@@ -1,10 +1,8 @@
-# T2 Starter App
+# After Deployment Physical Injury
 
-A boilerplate for creating Progressives Web Apps with React, TypeScript and Material-UI.
+After Deployment Physical Injury module built on the [T2 Starter PWA boilerplate](https://github.com/jlightfoot2/t2-pwa-starter)
 
-Boilerplate by [Jack Lightfoot](https://github.com/jlightfoot2)
-
-This boilerplate includes:
+This project includes:
 - [x] TypeScript 2.x
 - [x] Redux, React-Redux
 - [x] React-Router 4
@@ -13,9 +11,9 @@ This boilerplate includes:
 - [x] Offline Plugin
 
 ## Getting Started
-Clone the project:
+Clone the project: https://github.com/beth-eastman/ad-physical-injury.git
 
-``git clone https://github.com/jlightfoot2/t2-pwa-starter``
+``git clone ``
 
 Install dependencies:
 
@@ -32,7 +30,3 @@ Run tests
 Build the app
 
 ``yarn build``
-
-## Demo App
-
-The boilerplate is set up with a demo app of an online store. Run the demo app by starting the development server.

@@ -76,7 +76,7 @@ const render = (RootComponent: any) => {
 
 
   persistStore(store,{
-    blacklist: ['view'],
+    blacklist: ['view','videos','videoIds'],
     //whitelist: [],
     storage: localForage,//You can choose a diffrent engine
     keyPrefix: __REDUX_PERSIST_PREFIX__
@@ -84,7 +84,6 @@ const render = (RootComponent: any) => {
 
   if(__DEVTOOLS__){
     store.subscribe(() => {
-       // console.log(store.getState()); // list entire state of app
     });
   }
 

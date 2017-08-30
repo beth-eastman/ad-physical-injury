@@ -30,7 +30,7 @@
  * Government Agency Point of Contact for
  * Original Software: robert.a.kayl.civ@mail.mil
  */
-export const PrimaryColor = "#1b4583";
+export const PrimaryColor = "#D6C502";
 export const PrimaryColor2 = "#000000";
 
 export let listItemImage = {
@@ -91,7 +91,7 @@ export let titleStyles2 = {
   fontSize: 18,
   textAlign: 'center'
 }
-export let titleStylesLeft2 = {...titleStyles2,textAlign: 'left'}
+export let titleStylesLeft2 = {...titleStyles2, textAlign: 'left'}
 
 export let contentContainer1 = {
   margin: '0px auto 0px auto',
@@ -118,13 +118,13 @@ export let homeFooterAbsolute = {
 
 export let appBarTitleStyle = {
   position: 'relative' as 'relative',
-  left: -40,
+  left: -25,
   top: 1
 }
 
 export let appBarIconeStyle = {
   position: 'relative' as 'relative',
-  left: -20
+  left: -10
 }
 
 export let toolBarContentLeft = {

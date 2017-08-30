@@ -60,12 +60,13 @@ export default class AppBar extends React.Component<Props, State>{
   render(){
     const {title,leftIcon,onTitleClick,rightIcon} = this.props;
     return <MuiAppBar
+              style={{backgroundColor: '#00358b'}}
               titleStyle={appBarTitleStyle}
               iconStyleLeft={appBarIconeStyle}
               title={getTitleIcon(title)}
               onTitleTouchTap={onTitleClick}
               iconElementLeft={leftIcon}
               iconElementRight={rightIcon}
-              />;
+            />;
   }
 }

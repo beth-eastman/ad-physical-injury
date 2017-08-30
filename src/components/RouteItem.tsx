@@ -1,6 +1,6 @@
 /**
  * @file NavItem.tsx
- * 
+ *
  *
  * Created by Jack LightFoot on 08/22/2017
  *

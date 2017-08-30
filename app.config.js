@@ -33,14 +33,15 @@
 *
 */
 
-const appVersion = '0.0.0'
+const appVersion = '1.0.0';
+const name = 'Physical Inury';
 
 module.exports = {
-    name: 'Demo App', // name of your app
-    name_long: 'Demo App V' + appVersion,
+    name: name, // name of your app
+    name_long: name + ' V' + appVersion,
     version: appVersion,
     theme_color: '#3F51B5',
     background_color: "#FF9800",
-    dbPrefix: 'changeMeDev:', // database prefix for your app
+    dbPrefix: 'physicalInjury', // database prefix for your app
     appType: 'tabs' //options are: tabs|default
 }

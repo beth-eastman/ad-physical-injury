@@ -40,6 +40,8 @@ import {
 import {combineReducers} from 'redux';
 import * as demoReducers from './storeDemo';
 
+import * as adAppReducers from './adApp';
+
 
 
 const defaultUser = {
@@ -112,7 +114,8 @@ const defaultReducers = {
 
 const reducer = combineReducers({
   ...demoReducers,
-  ...defaultReducers
+  ...defaultReducers,
+  ...adAppReducers
 });
 
 export default reducer;
