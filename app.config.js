@@ -38,10 +38,11 @@ const name = 'Physical Inury';
 
 module.exports = {
     name: name, // name of your app
-    name_long: name + ' V' + appVersion,
+    name_long: name + ' V ' + appVersion,
     version: appVersion,
-    theme_color: '#3F51B5',
-    background_color: "#FF9800",
+    theme_color: '#01579B',
+    background_color: '#01579B',
+    description: 'After Deployment Physical Injury App',
     dbPrefix: 'physicalInjury', // database prefix for your app
     appType: 'tabs' //options are: tabs|default
 }

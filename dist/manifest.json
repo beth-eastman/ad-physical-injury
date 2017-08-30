@@ -1,10 +1,10 @@
 {
   "name": "Physical Inury",
-  "short_name": "Physical Inury V1.0.0",
+  "short_name": "Physical Inury",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#FF9800",
-  "theme_color": "#3F51B5",
+  "background_color": "#01579B",
+  "theme_color": "#01579B",
   "description": "<!-- @app_build decription-->",
   "icons": [{
     "src": "47a3a7c92607e4d5c94644fbb742c0d8.png",

@@ -1,6 +1,6 @@
 {
   "name": "<!-- @app_build name -->",
-  "short_name": "<!-- @app_build name_long -->",
+  "short_name": "<!-- @app_build name -->",
   "start_url": ".",
   "display": "standalone",
   "background_color": "<!-- @app_build background_color -->",

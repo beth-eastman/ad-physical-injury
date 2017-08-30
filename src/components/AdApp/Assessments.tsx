@@ -55,19 +55,20 @@ const Assessments: React.SFC<Props> = (props) => {
     }
   }
 
-  // const handleAssessmentMounted = (assessment) => {
-  /** appPage.setPageTitle(assesment.title) */
-  // };
-  // onAssessmentMounted={handleAssessmentMounted()}
+  const handleAssessmentMounted = (assessment) => {
+    props.appPage.setPageTitle(assessment.title);
+  };
 
   return(
-    <AssessmentsList onCancel={handleCancel()} cols={cols} >
-      <Depression />
-      <Physical />
-      <AlcoholDrugs />
-      <Optimism />
-      <Forgiveness />
-    </AssessmentsList>
+    <div style={{margin: 5}}>
+      <AssessmentsList onCancel={handleCancel()} cols={cols} onAssessmentMounted={handleAssessmentMounted} >
+        <Depression />
+        <Physical />
+        <AlcoholDrugs />
+        <Optimism />
+        <Forgiveness />
+      </AssessmentsList>
+    </div>
   );
 
 }

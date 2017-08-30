@@ -33,7 +33,7 @@
 *
 */
 import * as React from 'react';
-import {VideoInterface} from '../../res/data/videos'; 
+import {VideoInterface} from '../../res/data/videos';
 import {GridList, GridTile} from 'material-ui/GridList';
 
 export interface Props{
@@ -45,23 +45,27 @@ export interface Props{
 const VideosList: React.SFC<Props> = (props) => {
   const {videos, cols,onClick} = props;
 
-  return <GridList
-        cols={cols}
-      >
+  return(
+    <div style={{margin: 5}}>
+      <GridList
+          cols={cols}
+        >
 
-        {videos.map((item) => (
+          {videos.map((item) => (
 
-            <GridTile
-              key={item.id}
-              onTouchTap={() => onClick(item)}
-              title={item.title}
-            >
-              <img src={item.img} />
-            </GridTile>
+              <GridTile
+                key={item.id}
+                onTouchTap={() => onClick(item)}
+                title={item.title}
+              >
+                <img src={item.img} />
+              </GridTile>
 
 
-        ))}
-      </GridList>
+          ))}
+        </GridList>
+      </div>
+    );
 
 }
 
