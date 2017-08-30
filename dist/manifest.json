@@ -1,0 +1,42 @@
+{
+  "name": "Physical Inury",
+  "short_name": "Physical Inury V1.0.0",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#FF9800",
+  "theme_color": "#3F51B5",
+  "description": "<!-- @app_build decription-->",
+  "icons": [{
+    "src": "47a3a7c92607e4d5c94644fbb742c0d8.png",
+    "sizes": "48x48",
+    "type": "image/png"
+  }, {
+    "src": "b1c3cd8dcba9df8445b88cd4503f5a98.png",
+    "sizes": "72x72",
+    "type": "image/png"
+  }, {
+    "src": "24661f1b5dfd6b1a973c388f0eaba0e7.png",
+    "sizes": "96x96",
+    "type": "image/png"
+  }, {
+    "src": "69fba5d103397e0a003a677c156aad38.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  }, {
+    "src": "d137c294be50637f09f9df837a7c576a.png",
+    "sizes": "168x168",
+    "type": "image/png"
+  }, {
+    "src": "4418896028d28890a8df4672742b6f9c.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  },{
+    "src": "b4e7b86b261591a894aad6a208d1390f.png",
+    "sizes": "256x256",
+    "type": "image/png"
+  },{
+      "src": "4a93dadad7b6000d2e4764629e63f8ae.png",
+      "sizes": "512x512",
+      "type": "image/png"
+  }]
+}
