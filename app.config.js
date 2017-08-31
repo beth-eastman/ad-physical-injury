@@ -34,7 +34,7 @@
 */
 
 const appVersion = '1.0.0';
-const name = 'Physical Inury';
+const name = 'Physical Injury';
 
 module.exports = {
     name: name, // name of your app
