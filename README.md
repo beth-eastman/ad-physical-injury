@@ -3,7 +3,7 @@
 ## Intro
 A React PWA for resources related to dealing with physical injury after deployment.
 
-After Deployment Stigma module is built on the [T2 Starter PWA boilerplate](https://github.com/jlightfoot2/t2-pwa-starter)
+After Deployment Physical Injury module is built on the [T2 Starter PWA boilerplate](https://github.com/jlightfoot2/t2-pwa-starter)
 
 This project includes:
 - [x] TypeScript 2.x
